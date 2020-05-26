@@ -5,6 +5,9 @@ import ThemeBox from './ThemeBox'
 
 const Home = (props) => {
 	const [themes, setThemes] = useState([])
+	const dispatch = useDispatch()
+	const moduleIsLoading = useSelector(state => state.tree.modules.isLoading)
+	const modulesCollection = useSelector(state => state.tree.modules.collection)
 
 	useEffect(() => {
 		api.get('/skills/themes')
@@ -12,13 +15,20 @@ const Home = (props) => {
 	}, [])
 
 	useEffect(() => {
+		dispatch(fetchModules())
 		console.log(themes)
 	}, [themes])
 
+	if (moduleIsLoading) return <span>Modules are loading</span>
+
     return (
-        <Body>
-            { themes.map((theme, i) => <ThemeBox key={i} theme={theme} />) }
-        </Body>
+		<section>
+			<h1>Home</h1>
+			{
+				modulesCollection && modulesCollection.map(item => <span key={item.id}>{item.name}</span>)
+			}
+			<button onClick={() => dispatch({ type: 'CLEAR_MODULES' })}> Clear modules </button>
+		</section>
     )
 }
 

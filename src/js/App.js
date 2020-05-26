@@ -1,9 +1,7 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
+import { useDispatch } from 'react-redux'
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -16,6 +14,8 @@ import styled from 'styled-components'
 
 
 const App = () => {
+	const dispatch = useDispatch()
+
 	const [modale, setModale] = useState(null)
 
 	const clickOutsideModale = event => {
