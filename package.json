@@ -1,0 +1,43 @@
+{
+  "name": "simplons-skills-farming",
+  "version": "1.0.0",
+  "description": "Self evaluating skills tree for simplon's cursus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-back": "nodemon index.js --exec babel-node",
+    "dev-front": "parcel ./src/index.html"
+  },
+  "keywords": ["skills-tree-2"
+  ],
+  "author": "Mahut Lilian, Cabanes Thibault",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/runtime": "^7.8.3",
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.2",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0"
+  }
+}
